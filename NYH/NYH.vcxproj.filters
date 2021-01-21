@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\common">
+      <UniqueIdentifier>{3566862f-00f0-4462-8fe1-6e38fcc4baed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\view">
+      <UniqueIdentifier>{0408c778-2ba2-4c09-afb5-9db86df05e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\common">
+      <UniqueIdentifier>{0195fb46-75ff-4d12-b464-661131dfccf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\view">
+      <UniqueIdentifier>{b2d9839a-4947-4005-b706-7da016df43c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\io">
+      <UniqueIdentifier>{fa60a71a-5dce-4137-a5a8-3b33a8eb7b80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\io">
+      <UniqueIdentifier>{4c6c69cc-ec24-474d-9d02-a02eac597bcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\realCounter">
+      <UniqueIdentifier>{f2c26e4f-425a-4418-8538-9586ddf62984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\realCounter">
+      <UniqueIdentifier>{b25ec21d-6a17-49d4-a34e-b37c9ed5fe40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\测量">
+      <UniqueIdentifier>{c480a2ca-b0cc-49d3-a065-f9612565140f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\测量">
+      <UniqueIdentifier>{d589fe2d-8812-40a1-96a8-cc9403985c24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="NYH.h">
+      <Filter>头文件\view</Filter>
+    </ClInclude>
+    <ClInclude Include="NYHDlg.h">
+      <Filter>头文件\view</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="HashFunctions.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="UserConfig.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="HSNPacketReader.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketReader.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowTable.h">
+      <Filter>头文件\realCounter</Filter>
+    </ClInclude>
+    <ClInclude Include="RealCounter.h">
+      <Filter>头文件\realCounter</Filter>
+    </ClInclude>
+    <ClInclude Include="Ningketch.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="WavingSketch.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="Statistics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="NYHDlg.cpp">
+      <Filter>源文件\view</Filter>
+    </ClCompile>
+    <ClCompile Include="NYH.cpp">
+      <Filter>源文件\view</Filter>
+    </ClCompile>
+    <ClCompile Include="HSNPacketReader.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="HashFunctions.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketReader.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="FlowTable.cpp">
+      <Filter>源文件\realCounter</Filter>
+    </ClCompile>
+    <ClCompile Include="RealCounter.cpp">
+      <Filter>源文件\realCounter</Filter>
+    </ClCompile>
+    <ClCompile Include="Ningketch.cpp">
+      <Filter>源文件\测量</Filter>
+    </ClCompile>
+    <ClCompile Include="WavingSketch.cpp">
+      <Filter>源文件\测量</Filter>
+    </ClCompile>
+    <ClCompile Include="Statistics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NYH.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NYH.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\NYH.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
