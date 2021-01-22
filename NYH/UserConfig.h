@@ -15,10 +15,13 @@ typedef struct UserConfig {
 	ULONG ning_ratio;
 	ULONG ning_filter_row;
 	ULONG ning_filter_col;
+	int m_record;
 	ULONG ning_T1_row;
 	ULONG ning_T1_col;
 	ULONG ning_T2_row;
 	ULONG ning_T2_col;
+	ULONG ning_T3_row;
+	ULONG ning_T3_col;
 	double ning_voteThreshold;
 	ULONG ning_ft;
 	ULONG ning_kickLimit;

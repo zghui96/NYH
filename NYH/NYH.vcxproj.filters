@@ -99,6 +99,15 @@
     <ClInclude Include="Statistics.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="F_Elastic.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="F_Waving.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="Record.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -136,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="Statistics.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="F_Elastic.cpp">
+      <Filter>源文件\测量</Filter>
+    </ClCompile>
+    <ClCompile Include="F_Waving.cpp">
+      <Filter>源文件\测量</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

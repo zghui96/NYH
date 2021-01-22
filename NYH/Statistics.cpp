@@ -34,7 +34,19 @@ void Statistics::init(const UserConfig* user)
 	ASSERT(!user->fileList.empty());
 
 	//ningketch²âÁ¿
-	ning_identifier = new Ningketch(info);
+	
+	switch (user->m_record) {
+	case 0: {
+		ning_identifier = new Ningketch(info); break;
+		}
+	case 1: {
+		ning_identifier = new F_Elastic(info); break;
+	}
+	case 2: {
+		ning_identifier = new F_Waving(info); break;
+	}
+	}
+	
 
 	//ws²âÁ¿
 	ws_identifier = new WavingSketch(info);
@@ -120,8 +132,8 @@ void Statistics::standard() {
 	user->WS_AAE = ws_sum_AAE / realLargeFlowNum;
 	user->WS_ARE = ws_sum_ARE / realLargeFlowNum;
 
-	ning_identifier->LogTest();
-	ws_identifier->LogTest();
+	//ning_identifier->LogTest();
+	//ws_identifier->LogTest();
 }
 
 

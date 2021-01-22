@@ -44,4 +44,5 @@ public:
 	UserConfig m_configInfo;
 	afx_msg void OnBnClickedSelectSrcFile();
 	afx_msg void OnBnClickedOk();
+	CComboBox m_record;
 };

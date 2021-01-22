@@ -1,12 +1,18 @@
 #pragma once
 #include "Log.h"
 #include "common.h"
-#include <list>
 #include "UserConfig.h"
-
-class WavingSketch
+#include <list>
+#include "Record.h"
+class F_Waving:public Record
 {
 private:
+	typedef struct FBucket {
+		USHORT count;
+		bool flags;
+		FBucket() :count(0), flags(FALSE) {}
+	}FBucket;
+
 	typedef struct Entry {
 		FlowID fid;		//fid
 		ULONG count;	//正票数
@@ -43,12 +49,23 @@ private:
 	//行（桶）数，列（槽）数
 	ULONG ROW, COL;
 
+	double ratio, R_count;
+	FBucket** Filter;							//过滤器
+	ULONG F_ROW, F_COL;							//过滤器行，列
+	ULONG FT;								//过滤器阈值
+
 public:
-	WavingSketch(const UserConfig& user);
-	virtual ~WavingSketch();
+	F_Waving(const UserConfig& user);
+	virtual ~F_Waving();
 
 	void insert(const FlowID& fid);
 	ULONG getFlowNum(const FlowID& fid);
 	void LogTest();
+
+private:
+	void getFlowPosition_filter(const FlowID& fid, ULONG* index);
+	void insert_identifier(const FlowID& fid);
+	bool updataFilter();
+	
 };
 

@@ -95,7 +95,7 @@ ULONG WavingSketch::getFlowNum(const FlowID& fid) {
 }
 
 void WavingSketch::LogTest() {
-	Log::create(logPathTest_ws);
+	Log::create(logPathTest);
 	for (ULONG i = 0; i < ROW; i++) {
 		Log::addTest_ws(to_string(ws_count[i])+"\t");
 		for (ULONG j = 0; j < COL; j++) {

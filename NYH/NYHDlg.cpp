@@ -61,6 +61,7 @@ CNYHDlg::CNYHDlg(CWnd* pParent /*=nullptr*/)
 void CNYHDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_m_record, m_record);
 }
 
 BEGIN_MESSAGE_MAP(CNYHDlg, CDialogEx)
@@ -113,12 +114,19 @@ BOOL CNYHDlg::OnInitDialog()
 	setDefaultValue(IDC_ning_ft, _T("16"));
 	setDefaultValue(IDC_ning_T1_row, _T("256"));
 	setDefaultValue(IDC_ning_T1_col, _T("4"));
-	setDefaultValue(IDC_ning_T2_row, _T("0"));
-	setDefaultValue(IDC_ning_T2_col, _T("0"));
-	setDefaultValue(IDC_ning_kickLimit, _T("20"));
+	setDefaultValue(IDC_ning_T2_row, _T("128"));
+	setDefaultValue(IDC_ning_T2_col, _T("8"));
+	setDefaultValue(IDC_ning_T3_row, _T("128"));
+	setDefaultValue(IDC_ning_T3_col, _T("8"));
+	setDefaultValue(IDC_ning_kickLimit, _T("5"));
 
 	setDefaultValue(IDC_WS_row, _T("128"));
 	setDefaultValue(IDC_WS_col, _T("8"));
+
+	m_record.AddString(_T("cuckoo"));
+	m_record.AddString(_T("ES"));
+	m_record.AddString(_T("WS"));
+	m_record.SetCurSel(0);
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -246,11 +254,15 @@ void CNYHDlg::OnBnClickedOk()
 	m_configInfo.ning_T1_col = getValueByControID<ULONG>(IDC_ning_T1_col);
 	m_configInfo.ning_T2_row = getValueByControID<ULONG>(IDC_ning_T2_row);
 	m_configInfo.ning_T2_col = getValueByControID<ULONG>(IDC_ning_T2_col);
+	m_configInfo.ning_T3_row = getValueByControID<ULONG>(IDC_ning_T3_row);
+	m_configInfo.ning_T3_col = getValueByControID<ULONG>(IDC_ning_T3_col);
 	m_configInfo.ning_ft = getValueByControID<ULONG>(IDC_ning_ft);
 	m_configInfo.ning_kickLimit = getValueByControID<ULONG>(IDC_ning_kickLimit);
 
 	m_configInfo.WS_row = getValueByControID<ULONG>(IDC_WS_row);
 	m_configInfo.WS_col = getValueByControID<ULONG>(IDC_WS_col);
+
+	m_configInfo.m_record = m_record.GetCurSel();
 
 	GetDlgItem(IDOK)->EnableWindow(FALSE);
 

@@ -17,7 +17,7 @@ Ningketch::Ningketch(const UserConfig& user)
 	FT = user.ning_ft - 1;
 
 	kickLimit = user.ning_kickLimit;
-	voteThreshold = user.ning_voteThreshold;
+
 	//Filter
 	Filter = new FBucket * [F_ROW];
 	for (ULONG i = 0; i < F_ROW; i++) {

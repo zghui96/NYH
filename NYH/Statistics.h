@@ -10,12 +10,14 @@
 #include "RealCounter.h"
 #include "math.h"
 #include "WavingSketch.h"
+#include "F_Elastic.h"
+#include "F_Waving.h"
 
 class Statistics
 {
 private:
 	ULONG readNumLimit;	//限制读取数据包个数
-	Ningketch* ning_identifier;
+	Record* ning_identifier;
 	WavingSketch* ws_identifier;
 	PacketReader* reader;
 	RealCounter* realCounter;
