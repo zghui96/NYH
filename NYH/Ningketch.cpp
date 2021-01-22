@@ -197,8 +197,8 @@ bool Ningketch::insert_identifier(const FlowID& fid) {
 			}
 		}
 	}
-	if (isKick) kickOut(e, index_row, index_col, kickLimit);
-
+	if (isKick)  kickOut(e, index_row, index_col, kickLimit);
+	
 	return FALSE;
 }
 
@@ -206,8 +206,11 @@ void Ningketch::kickOut(Entry e, ULONG row, ULONG col,ULONG kick_Num) {
 	if (kick_Num > 0) {
 		bool isKick = FALSE;
 		Entry tmp_e = T1[row][col];
-		e.count = T1[row][col].count + 1;
-		T1[row][col] = e;
+		if (kick_Num == kickLimit) {
+			e.count = T1[row][col].count + 1;
+			T1[row][col] = e;
+		}
+		else T1[row][col] = e;
 
 		ULONG index_row, index_col, min;
 		index_row = row ^ tmp_e.sign % T1_ROW;
