@@ -108,6 +108,9 @@
     <ClInclude Include="Record.h">
       <Filter>头文件\测量</Filter>
     </ClInclude>
+    <ClInclude Include="cuckoo_N.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -150,6 +153,9 @@
       <Filter>源文件\测量</Filter>
     </ClCompile>
     <ClCompile Include="F_Waving.cpp">
+      <Filter>源文件\测量</Filter>
+    </ClCompile>
+    <ClCompile Include="cuckoo_N.cpp">
       <Filter>源文件\测量</Filter>
     </ClCompile>
   </ItemGroup>

@@ -31,7 +31,7 @@ F_Waving::F_Waving(const UserConfig& user)
 
 	//test
 	Log::create(logPathTest);
-	Log::create(logPath_updataFilter);
+	Log::addTest("—°‘Ò÷µ£∫" + to_string(user.m_record));
 }
 
 F_Waving::~F_Waving()

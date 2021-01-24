@@ -39,11 +39,14 @@ void Statistics::init(const UserConfig* user)
 	case 0: {
 		ning_identifier = new Ningketch(info); break;
 		}
-	case 1: {
+	case 2: {
 		ning_identifier = new F_Elastic(info); break;
 	}
-	case 2: {
+	case 3: {
 		ning_identifier = new F_Waving(info); break;
+	}
+	case 1: {
+		ning_identifier = new cuckoo_N(info); break;
 	}
 	}
 	

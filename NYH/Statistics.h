@@ -12,6 +12,7 @@
 #include "WavingSketch.h"
 #include "F_Elastic.h"
 #include "F_Waving.h"
+#include "cuckoo_N.h"
 
 class Statistics
 {

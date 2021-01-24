@@ -124,8 +124,10 @@ BOOL CNYHDlg::OnInitDialog()
 	setDefaultValue(IDC_WS_col, _T("8"));
 
 	m_record.AddString(_T("cuckoo"));
+	m_record.AddString(_T("cuckoo_N"));
 	m_record.AddString(_T("ES"));
 	m_record.AddString(_T("WS"));
+
 	m_record.SetCurSel(0);
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
