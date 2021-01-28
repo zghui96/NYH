@@ -106,9 +106,9 @@ BOOL CNYHDlg::OnInitDialog()
 
 	// TODO: 在此添加额外的初始化代码
 	setDefaultValue(IDC_PACKET_NUM_LIMIT, _T("2000000"));
-
+	//setDefaultValue(IDC_MSG_AREA, _T("D:\BaiduNetdiskEntpriseDownload\CERNET20181206\20181205_235506.hsn"));
 	//设置默认参数
-	setDefaultValue(IDC_ning_ratio, _T("60"));
+	setDefaultValue(IDC_ning_ratio, _T("85"));
 	setDefaultValue(IDC_ning_filter_row, _T("3"));
 	setDefaultValue(IDC_ning_filter_col, _T("1024"));
 	setDefaultValue(IDC_ning_ft, _T("16"));
@@ -126,9 +126,10 @@ BOOL CNYHDlg::OnInitDialog()
 	m_record.AddString(_T("cuckoo"));
 	m_record.AddString(_T("cuckoo_N"));
 	m_record.AddString(_T("ES"));
+	m_record.AddString(_T("F_4hash"));
 	m_record.AddString(_T("WS"));
 
-	m_record.SetCurSel(0);
+	m_record.SetCurSel(3);
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -237,6 +238,7 @@ void CNYHDlg::OnBnClickedSelectSrcFile()
 void CNYHDlg::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码
+	
 	UpdateData(TRUE);
 	if (m_configInfo.fileList.empty())
 	{

@@ -51,55 +51,44 @@ F_Elastic::~F_Elastic()
 }
 
 void F_Elastic::insert(const FlowID& fid) {
-	ULONG index[3], CU_new[3] = { FT,FT,FT };
+	ULONG index[3], F_min = FT, F_flags = TRUE, F_row = ULONG_MAX, F_col = ULONG_MAX;
 	bool pass = TRUE;
 	getFlowPosition_filter(fid, index);
 	for (ULONG i = 0; i < F_ROW; i++) {
-		if (!Filter[i][index[i]].flags) {
-			if (Filter[i][index[i]].count < FT) {
-				pass = FALSE;
-			}
+		if (F_min > Filter[i][index[i]].count) {
+			F_min = Filter[i][index[i]].count;
+			F_row = i;
+			F_col = index[i];
 		}
-		CU_new[i] = Filter[i][index[i]].count;
+		if (Filter[i][index[i]].flags == FALSE) {
+			F_flags = FALSE;
+		}
 	}
-
-	if (CU_new[0] == CU_new[1] && CU_new[2] == CU_new[1] && CU_new[0] < FT) {
-		++Filter[0][index[0]].count;
-		++Filter[1][index[1]].count;
-		++Filter[2][index[2]].count;
-		if (Filter[0][index[0]].count == FT) R_count += 3;
-	}
-	else {
-		if (CU_new[0] > CU_new[1])
-			if (CU_new[1] > CU_new[2]) {
-				if (Filter[2][index[2]].count < FT) {
-					++Filter[2][index[2]].count;
-					if (Filter[2][index[2]].count == FT)
-						++R_count;
-				}
-			}
-			else {
-				if (Filter[1][index[1]].count < FT) {
-					++Filter[1][index[1]].count;
-					if (Filter[1][index[1]].count == FT)
-						++R_count;
-				}
-			}
-		else {
-			if (CU_new[0] > CU_new[2]) {
-				if (Filter[2][index[2]].count < FT) {
-					++Filter[2][index[2]].count;
-					if (Filter[2][index[2]].count == FT)
-						++R_count;
-				}
-			}
-			else {
-				if (Filter[0][index[0]].count < FT) {
-					++Filter[0][index[0]].count;
-					if (Filter[0][index[0]].count == FT)
-						++R_count;
-				}
-			}
+	if (F_min < FT && F_flags == FALSE)	pass = FALSE;
+	if (F_min < FT) {
+		if (Filter[0][index[0]].count == Filter[1][index[1]].count && Filter[1][index[1]].count == Filter[2][index[2]].count) {
+			++Filter[0][index[0]].count;
+			++Filter[1][index[1]].count;
+			++Filter[2][index[2]].count;
+			if (Filter[0][index[0]].count == FT) R_count += 3;
+		}
+		else if (Filter[0][index[0]].count == Filter[1][index[1]].count && Filter[1][index[1]].count == F_min) {
+			++Filter[0][index[0]].count;
+			++Filter[1][index[1]].count;
+			if (Filter[0][index[0]].count == FT) R_count += 2;
+		}
+		else if (Filter[1][index[1]].count == Filter[2][index[2]].count && Filter[2][index[2]].count == F_min) {
+			++Filter[1][index[1]].count;
+			++Filter[2][index[2]].count;
+			if (Filter[1][index[1]].count == FT) R_count += 2;
+		}
+		else if (Filter[0][index[0]].count == Filter[2][index[2]].count && Filter[2][index[2]].count == F_min) {
+			++Filter[0][index[0]].count;
+			++Filter[2][index[2]].count;
+			if (Filter[1][index[1]].count == FT) R_count += 2;
+		}
+		else  if (F_row != ULONG_MAX) {
+			++Filter[F_row][F_col].count;
 		}
 	}
 	if (R_count >= ratio) updataFilter();

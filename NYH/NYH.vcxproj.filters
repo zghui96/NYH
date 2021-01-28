@@ -96,9 +96,6 @@
     <ClInclude Include="WavingSketch.h">
       <Filter>头文件\测量</Filter>
     </ClInclude>
-    <ClInclude Include="Statistics.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="F_Elastic.h">
       <Filter>头文件\测量</Filter>
     </ClInclude>
@@ -110,6 +107,12 @@
     </ClInclude>
     <ClInclude Include="cuckoo_N.h">
       <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="F_4hash.h">
+      <Filter>头文件\测量</Filter>
+    </ClInclude>
+    <ClInclude Include="Statistics.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +159,9 @@
       <Filter>源文件\测量</Filter>
     </ClCompile>
     <ClCompile Include="cuckoo_N.cpp">
+      <Filter>源文件\测量</Filter>
+    </ClCompile>
+    <ClCompile Include="F_4hash.cpp">
       <Filter>源文件\测量</Filter>
     </ClCompile>
   </ItemGroup>

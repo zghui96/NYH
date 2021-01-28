@@ -4,7 +4,7 @@
 #include "UserConfig.h"
 #include <list>
 #include "Record.h"
-class cuckoo_N :public Record
+class F_4hash :public Record
 {
 private:
 	typedef struct FBucket {
@@ -16,12 +16,10 @@ private:
 	typedef struct Entry {
 		ULONG sign;		//fid
 		long count;	//计数器
-		bool flags;
-		Entry() :sign(0), count(0),flags(TRUE) {}
+		Entry() :sign(0), count(0){}
 		Entry(const ULONG sign) {
 			this->sign = sign;
 			this->count = 1;
-			this->flags = TRUE;
 		}
 		inline Entry operator=(const Entry& e) {
 			sign = e.sign;
@@ -41,11 +39,12 @@ private:
 	Entry** T1;								//cuckoo表
 	ULONG T1_ROW, T1_COL;
 	ULONG FT;								//过滤器阈值
-	long *WCount;
+	ULONG* pVote;
 	long updata = 0;
+	double voteP;
 public:
-	cuckoo_N(const UserConfig& user);
-	virtual ~cuckoo_N();
+	F_4hash(const UserConfig& user);
+	virtual ~F_4hash();
 
 	void insert(const FlowID& fid);
 	ULONG getFlowNum(const FlowID& fid);
@@ -55,6 +54,6 @@ private:
 	void getFlowPosition_filter(const FlowID& fid, ULONG* index);
 	bool insert_identifier(const FlowID& fid);
 	bool updataFilter();
-	void kickOut(Entry e, ULONG row, ULONG col, ULONG kickNum);
+	void getFlowPosition_identifier(const FlowID& fid, ULONG* index);
 };
 

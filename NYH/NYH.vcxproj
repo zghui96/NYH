@@ -188,6 +188,7 @@
     <ClInclude Include="cuckoo_N.h" />
     <ClInclude Include="FlowTable.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="F_4hash.h" />
     <ClInclude Include="F_Elastic.h" />
     <ClInclude Include="F_Waving.h" />
     <ClInclude Include="HashFunctions.h" />
@@ -209,6 +210,7 @@
   <ItemGroup>
     <ClCompile Include="cuckoo_N.cpp" />
     <ClCompile Include="FlowTable.cpp" />
+    <ClCompile Include="F_4hash.cpp" />
     <ClCompile Include="F_Elastic.cpp" />
     <ClCompile Include="F_Waving.cpp" />
     <ClCompile Include="HashFunctions.cpp" />

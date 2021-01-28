@@ -38,16 +38,20 @@ void Statistics::init(const UserConfig* user)
 	switch (user->m_record) {
 	case 0: {
 		ning_identifier = new Ningketch(info); break;
-		}
-	case 2: {
-		ning_identifier = new F_Elastic(info); break;
-	}
-	case 3: {
-		ning_identifier = new F_Waving(info); break;
 	}
 	case 1: {
 		ning_identifier = new cuckoo_N(info); break;
 	}
+	case 2: {
+		ning_identifier = new F_Elastic(info); break;
+	}
+	case 3: {
+		ning_identifier = new F_4hash(info); break;
+	}
+	case 4: {
+		ning_identifier = new F_Waving(info); break;
+	}
+
 	}
 	
 

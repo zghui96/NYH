@@ -13,6 +13,7 @@
 #include "F_Elastic.h"
 #include "F_Waving.h"
 #include "cuckoo_N.h"
+#include "F_4hash.h"
 
 class Statistics
 {
